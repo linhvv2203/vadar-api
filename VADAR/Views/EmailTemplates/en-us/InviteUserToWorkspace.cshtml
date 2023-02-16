@@ -1,0 +1,422 @@
+﻿@using VADAR.DTO.EmailTemplateViewModel
+@using Microsoft.Extensions.Configuration
+@model InviteUserToWorkspaceViewModel
+@inject IConfiguration Configuration
+@{
+    ViewData["Title"] = "InviteUserToWorkspaceTemplate";
+    var activeUrl = $"{Configuration["ClientServerUrl"]}/members/invitation-confirm/{Model.InviteCode}/{Model.WorkspaceName}";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vsec</title>
+    <style>
+
+        html,
+        body {
+            margin: 0px;
+            padding: 0px;
+            font-family: "Roboto", sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .font-timets-new-roman {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .list-inline {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+            .list-inline li {
+                vertical-align: middle;
+            }
+
+        .table th {
+            width: max-content !important;
+            display: block;
+        }
+
+        img {
+            max-width: 100%;
+            border: none;
+        }
+
+        .fleft {
+            float: left;
+        }
+
+        .fright {
+            float: right;
+        }
+
+        .clear-fix,
+        .clearfix {
+            clear: both;
+        }
+
+        .disable {
+            display: none;
+        }
+
+        .action,
+        .bg-main {
+            background-color: #1e498c;
+        }
+
+        .top-0 {
+            top: 0;
+        }
+
+        .bottom-0 {
+            bottom: 0;
+        }
+
+        .left-0 {
+            left: 0;
+        }
+
+        .right-0 {
+            right: 0;
+        }
+
+        .cover-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .line-clamp {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            overflow: hidden;
+        }
+
+        .truncate-2 {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+        }
+
+        .text-break {
+            word-break: break-word !important;
+            overflow-wrap: break-word !important;
+        }
+
+        .font-12 {
+            font-size: 12px;
+        }
+
+        .font-16 {
+            font-size: 16px !important;
+        }
+
+        .font-18 {
+            font-size: 18px;
+        }
+
+        .var-email-template__logo {
+            max-width: 180px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .var-email-template__title {
+            color: #b22222;
+        }
+
+        .text-main {
+            color: #1e498c;
+        }
+
+        .btn-main {
+            color: #fff !important;
+            background-color: #1e498c;
+            border-color: #1e498c;
+        }
+
+            .btn-main:hover {
+                color: #fff;
+                background-color: #17396d;
+                border-color: #153362;
+            }
+
+            .btn-main:focus,
+            .btn-main.focus {
+                -webkit-box-shadow: 0 0 0 0.2rem rgba(30, 73, 140, 0.5);
+                box-shadow: 0 0 0 0.2rem rgba(30, 73, 140, 0.5);
+            }
+
+            .btn-main.disabled,
+            .btn-main:disabled {
+                color: #fff;
+                background-color: #1e498c;
+                border-color: #1e498c;
+            }
+
+            .btn-main:not(:disabled):not(.disabled):active,
+            .btn-main:not(:disabled):not(.disabled).active,
+            .show > .btn-main.dropdown-toggle {
+                color: #fff;
+                background-color: #153362;
+                border-color: #132e58;
+            }
+
+                .btn-main:not(:disabled):not(.disabled):active:focus,
+                .btn-main:not(:disabled):not(.disabled).active:focus,
+                .show > .btn-main.dropdown-toggle:focus {
+                    -webkit-box-shadow: 0 0 0 0.2rem rgba(30, 73, 140, 0.5);
+                    box-shadow: 0 0 0 0.2rem rgba(30, 73, 140, 0.5);
+                }
+
+        hr {
+            border-top: 2px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .footer {
+            color: #656565;
+            text-align: center;
+        }
+
+        .font-bold {
+            font-weight: bold;
+        }
+
+        .w-200px {
+            width: 200px;
+        }
+
+        .table th {
+            text-align: left;
+            padding-left: 0px !important;
+        }
+
+        .text-green {
+            color: #6CA828 !important;
+        }
+
+        @@media (min-width: 1200px) {
+
+            .container,
+            .container-lg,
+            .container-md,
+            .container-sm,
+            .container-xl {
+                max-width: 1140px;
+            }
+        }
+
+        @@media (min-width: 992px) {
+
+            .container,
+            .container-lg,
+            .container-md,
+            .container-sm {
+                max-width: 960px;
+            }
+        }
+
+        @@media (min-width: 768px) {
+
+            .container,
+            .container-md,
+            .container-sm {
+                max-width: 720px;
+            }
+        }
+
+        @@media (min-width: 576px) {
+
+            .container,
+            .container-sm {
+                max-width: 540px;
+            }
+        }
+
+        .container,
+        .container-fluid,
+        .container-lg,
+        .container-md,
+        .container-sm,
+        .container-xl {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .text-center {
+            text-align: center !important;
+        }
+
+        .mb-5,
+        .my-5 {
+            margin-bottom: 3rem !important;
+        }
+
+        .var-email-template__logo {
+            max-width: 180px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .mb-4,
+        .my-4 {
+            margin-bottom: 1.5rem !important;
+        }
+
+        figure {
+            margin: 0 0 1rem;
+        }
+
+        article,
+        aside,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        main,
+        nav,
+        section {
+            display: block;
+        }
+
+        .text-info {
+            color: #17a2b8 !important;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .table {
+            width: 100%;
+            margin-bottom: 1rem;
+            color: #212529;
+            border-collapse: collapse;
+        }
+
+        .btn-main {
+            color: #fff;
+            background-color: #1e498c;
+            border-color: #1e498c;
+            display: inline-block;
+        }
+
+        .btn:not(:disabled):not(.disabled) {
+            cursor: pointer;
+        }
+
+        .btn-group-lg > .btn,
+        .btn-lg {
+            padding: .5rem 1rem;
+            font-size: 1.25rem;
+            line-height: 1.5;
+            border-radius: .3rem;
+        }
+
+        a.btn-main {
+            text-decoration: none;
+        }
+
+        .font-timets-new-roman {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .pt-2,
+        .py-2 {
+            padding-top: .5rem !important;
+        }
+
+        .mb-1,
+        .my-1 {
+            margin-bottom: .25rem !important;
+        }
+
+        .text-danger {
+            color: #dc3545 !important;
+        }
+
+        .text-warning {
+            color: #ffc107 !important;
+        }
+
+        .text-info {
+            color: #17a2b8 !important;
+        }
+
+        .table-sm td,
+        .table-sm th {
+            padding: .3rem;
+        }
+
+        .table-borderless tbody + tbody,
+        .table-borderless td,
+        .table-borderless th,
+        .table-borderless thead th {
+            border: 0;
+        }
+
+        .table td,
+        .table th {
+            vertical-align: top;
+        }
+
+        .bg-white {
+            background-color: #fff;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper" class="var-email-template">
+        <div class="container">
+            <div class="var-email-template__head text-center mb-5">
+                <figure class="var-email-template__logo mb-4">
+                    <img class="bg-white" src="https://files.vsec.vn:9090/vsecsite/vsec_vadar.PNG?123" alt="Vsec">
+                </figure>
+            </div>
+            <p class="font-12 font-bold">Hi,</p>
+            <p class="font-12">You receive an invitation to join the Workspace, please confirm to use the VSEC VADAR security monitoring service.</p>
+            @*<p class="font-12">Vui lòng xác nhận tài khoản để sử dụng các dịch vụ giám sát an toàn thông tin Vadar.</p>
+        <p class="font-12">Thời hạn kích hoạt là 5 ngày</p>*@
+
+            <a href="@activeUrl" class="btn btn-main btn-lg mb-4 font-16">
+                Join
+            </a>
+            <div class="font-timets-new-roman pt-2">
+                <p class="font-12">
+                    In case you are unable to activate, please contact email <a href="#"
+                                                                                class="text-info">contact@vsec.com.vn</a> or hotline 0906831337
+                </p>
+                <br />
+                <p class="mb-1"><b>Best regards,</b></p>
+                <p>VSEC team.</p>
+            </div>
+            <div class="footer font-12">
+                <hr />
+                <p>
+                    VSEC VADAR - Comprehensive information security monitoring solution<br>Address: Court N01A - Floor M - Golden Land Building, 275 Nguyen Trai, Hanoi, Vietnam.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

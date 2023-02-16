@@ -1,0 +1,96 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Configurations>Debug;Release;QA;Development;Production</Configurations>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>VADAR.Model.xml</DocumentationFile>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <Compile Remove="Enum\**" />
+    <EmbeddedResource Remove="Enum\**" />
+    <None Remove="Enum\**" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Remove="Migrations\20200604103135_DBInitialize.cs" />
+    <Compile Remove="Migrations\20200604103135_DBInitialize.Designer.cs" />
+    <Compile Remove="Migrations\20200610075302_DBInitialize.cs" />
+    <Compile Remove="Migrations\20200610075302_DBInitialize.Designer.cs" />
+    <Compile Remove="Migrations\20200610075506_DBInitialize.cs" />
+    <Compile Remove="Migrations\20200610075506_DBInitialize.Designer.cs" />
+    <Compile Remove="Migrations\20200611093900_AddFieldTokenForTableWorkspace.cs" />
+    <Compile Remove="Migrations\20200611093900_AddFieldTokenForTableWorkspace.Designer.cs" />
+    <Compile Remove="Migrations\20200612070647_CreateTableWorkspaceHost.cs" />
+    <Compile Remove="Migrations\20200612070647_CreateTableWorkspaceHost.Designer.cs" />
+    <Compile Remove="Migrations\20200612070722_CreateTableWorkspaceHost.cs" />
+    <Compile Remove="Migrations\20200612070722_CreateTableWorkspaceHost.Designer.cs" />
+    <Compile Remove="Migrations\20200612070751_CreateTableWorkspaceHost.cs" />
+    <Compile Remove="Migrations\20200612070751_CreateTableWorkspaceHost.Designer.cs" />
+    <Compile Remove="Migrations\20200612070813_CreateTableWorkspaceHost.cs" />
+    <Compile Remove="Migrations\20200612070813_CreateTableWorkspaceHost.Designer.cs" />
+    <Compile Remove="Migrations\20200612071409_AddFieldWorkspaceId.cs" />
+    <Compile Remove="Migrations\20200612071409_AddFieldWorkspaceId.Designer.cs" />
+    <Compile Remove="Migrations\20200612072219_AddFieldWorkspaceId.cs" />
+    <Compile Remove="Migrations\20200612072219_AddFieldWorkspaceId.Designer.cs" />
+    <Compile Remove="Migrations\20200612073037_AddFieldWorkspaceId.cs" />
+    <Compile Remove="Migrations\20200612073037_AddFieldWorkspaceId.Designer.cs" />
+    <Compile Remove="Migrations\20200612093707_AddFieldEngineRefGroup.cs" />
+    <Compile Remove="Migrations\20200612093707_AddFieldEngineRefGroup.Designer.cs" />
+    <Compile Remove="Migrations\20200615203736_AddFieldPcIdFrTableHost.cs" />
+    <Compile Remove="Migrations\20200615203736_AddFieldPcIdFrTableHost.Designer.cs" />
+    <Compile Remove="Migrations\20200626083946_SetKeyForWorkspaceId.cs" />
+    <Compile Remove="Migrations\20200626083946_SetKeyForWorkspaceId.Designer.cs" />
+    <Compile Remove="Migrations\20200626094248_ReviseKeyForWhiteListTable.cs" />
+    <Compile Remove="Migrations\20200626094248_ReviseKeyForWhiteListTable.Designer.cs" />
+    <Compile Remove="Migrations\20200728044919_CreateTableManagementAgent.cs" />
+    <Compile Remove="Migrations\20200728044919_CreateTableManagementAgent.Designer.cs" />
+    <Compile Remove="Migrations\20200728045002_SeedDataForAgentAndOs.cs" />
+    <Compile Remove="Migrations\20200728045002_SeedDataForAgentAndOs.Designer.cs" />
+    <Compile Remove="Migrations\20200908074827_CreateLicenseTable.cs" />
+    <Compile Remove="Migrations\20200908074827_CreateLicenseTable.Designer.cs" />
+    <Compile Remove="Migrations\20201217112721_AddNotificationSettingTable.cs" />
+    <Compile Remove="Migrations\20201217112721_AddNotificationSettingTable.Designer.cs" />
+    <Compile Remove="Migrations\20201222112540_AddWorkspaceClaimTable.cs" />
+    <Compile Remove="Migrations\20201222112540_AddWorkspaceClaimTable.Designer.cs" />
+    <Compile Remove="Migrations\20210219030041_AddFieldTypeforTableHosts.cs" />
+    <Compile Remove="Migrations\20210219030041_AddFieldTypeforTableHosts.Designer.cs" />
+    <Compile Remove="Migrations\20210219090433_UpdateTypeFieldForTableHosts.cs" />
+    <Compile Remove="Migrations\20210219090433_UpdateTypeFieldForTableHosts.Designer.cs" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Remove="stylecop.json" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <AdditionalFiles Include="stylecop.json" />
+  </ItemGroup>
+
+    <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.9" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.9" />
+    <PackageReference Include="Minio.NetCore" Version="1.1.1" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.3" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="System.Runtime.Serialization.Formatters" Version="4.3.0" />
+  </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\VADAR.Helpers\VADAR.Helpers.csproj" />
+    </ItemGroup>
+  
+</Project>

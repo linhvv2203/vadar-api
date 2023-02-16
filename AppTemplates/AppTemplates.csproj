@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>3c788f60-53e8-437a-b348-3c67e779566d</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\EmailTemplates\en-us\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VADAR.DTO\VADAR.DTO.csproj" />
+  </ItemGroup>
+
+</Project>

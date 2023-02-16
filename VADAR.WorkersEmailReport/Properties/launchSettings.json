@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "VADAR.WorkersEmailReport": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

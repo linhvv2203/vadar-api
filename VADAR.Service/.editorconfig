@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS1974: Dynamically dispatched call may fail at runtime because one or more applicable overloads are conditional methods
+dotnet_diagnostic.CS1974.severity = none
